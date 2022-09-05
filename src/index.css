@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html{
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fbfbfb;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+}
+
+.main{
+    display: flex;
+    margin: 46px 120px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.view{
+    width: 100%;
+    margin-left: 50px;
+}
+
+.activeCategoryItem, .activeStatus{
+    color: green !important;
+}
+
+.activeStatus{
+    border-bottom: 2px solid #46A358;
+}
