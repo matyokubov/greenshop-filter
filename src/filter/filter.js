@@ -4,7 +4,7 @@ const list = [
         statusName: "all"
     },
     {
-        title: "New",
+        title: "New Arrivals",
         statusName: "new"
     },
     {

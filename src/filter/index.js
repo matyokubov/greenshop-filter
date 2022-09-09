@@ -22,4 +22,9 @@ const filterByStatus = (categoryName) => {
     }
 }
 
-export {separate, filterByStatus};
+const filterByPriceRange = (data, range) => {
+    let filtered = data?.filter((item) => item.saleprice >= range.min && item.saleprice <= range.max)
+    return filtered;
+}
+
+export {separate, filterByStatus, filterByPriceRange};

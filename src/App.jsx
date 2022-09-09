@@ -1,6 +1,6 @@
-import Categories from "./component/Categories"
 import Filter from "./component/Filter"
 import Products from "./component/Products"
+import Sidebar from "./component/Sidebar"
 import { useLocation, Route } from "react-router-dom"
 import { ContextAPI } from "./context"
 import { useContext } from "react"
@@ -17,10 +17,13 @@ const App = () => {
                     currentLocation.pathname.split("/").length === 3 ? () => {
                         setCategory(currentLocation.pathname.split("/")[1])
                         setStatus(currentLocation.pathname.split("/")[2])
+                        return null
                     } : () => <Redirect to={"/plants/all"}/>
                 }
             </Route>
-            <Categories/>
+            <div className="sidebar">
+                <Sidebar/>
+            </div>
             <div className="view">
                 <Filter/>
                 <Products/>

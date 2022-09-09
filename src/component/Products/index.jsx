@@ -1,12 +1,12 @@
 import { Box, Product } from "./style";
 import { ContextAPI } from "../../context";
 import { useContext } from "react";
-import { filterByStatus } from "../../filter"
+import { filterByStatus, filterByPriceRange } from "../../filter"
 
 const Products = () => {
-    const { status, category } = useContext(ContextAPI)
-    const filtered = filterByStatus(category)[status]
-    console.log(status, category);
+    const { status, category, priceRange } = useContext(ContextAPI)
+    const filtered = filterByPriceRange(filterByStatus(category)[status], priceRange)
+    console.log(status, category, priceRange);
     console.log(filtered);
     return (
         <Box>

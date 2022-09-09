@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "CeraPRO-Regular";
+    src: local("Cera"), url("./Cera.otf") format("truetype");
+}
+
 body, html{
     padding: 0;
     margin: 0;
@@ -27,7 +32,11 @@ body::-webkit-scrollbar-thumb {
 .main{
     display: flex;
     margin: 46px 120px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'CeraPRO-Regular', 'Montserrat', sans-serif;
+}
+
+img{
+    width: 100%;
 }
 
 .view{
@@ -35,8 +44,14 @@ body::-webkit-scrollbar-thumb {
     margin-left: 50px;
 }
 
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
 .activeCategoryItem, .activeStatus{
     color: green !important;
+    font-weight: 700;
 }
 
 .activeStatus{
