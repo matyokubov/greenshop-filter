@@ -3,11 +3,10 @@ import { useState } from "react"
 
 export const ContextAPI = createContext()
 export const Context = ({children}) => {
-    const [category, setCategory] = useState("plants")
-    const [status, setStatus] = useState("all")
+    const [type, setType] = useState({category: "plants", status: "all"})
     const [priceRange, setPriceRange] = useState({min: 0, max: 999})
     return (
-        <ContextAPI.Provider value={{category, setCategory, status, setStatus, priceRange, setPriceRange}}>
+        <ContextAPI.Provider value={{type, setType, priceRange, setPriceRange}}>
             {children}
         </ContextAPI.Provider>
     )

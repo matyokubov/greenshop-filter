@@ -2,22 +2,22 @@ import { Box, Product } from "./style";
 import { ContextAPI } from "../../context";
 import { useContext } from "react";
 import { filterByStatus, filterByPriceRange } from "../../filter"
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-    const { status, category, priceRange } = useContext(ContextAPI)
-    const filtered = filterByPriceRange(filterByStatus(category)[status], priceRange)
-    console.log(status, category, priceRange);
-    console.log(filtered);
+    const { type, priceRange } = useContext(ContextAPI)
+    const navigate = useNavigate()
+    const filtered = filterByPriceRange(filterByStatus(type.category)[type.status], priceRange)
     return (
         <Box>
             {
                 filtered.length !== 0 ? filtered?.map((product, i) => (
                     <Product key={i}>
-                        <div className="img">
+                        <div className="img" onClick={() => navigate(`/${type.category}/${type.status}/view/${product.id}`)}>
                             <img src={product.img} alt={product.name}/>
                         </div>
                         <div className="self">
-                            <span>{product.name}</span>
+                            <span onClick={() => navigate(`/${type.category}/${type.status}/view/${product.id}`)} className="ptitle">{product.name}</span>
                             <span className="price">${product.saleprice}</span>
                         </div>
                     </Product>

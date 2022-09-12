@@ -5,17 +5,14 @@ import { ContextAPI } from "../../context";
 import { NavLink } from "react-router-dom";
 
 const Categories = () => {
-    const { category, setStatus } = useContext(ContextAPI)
-    const selectStatus = (status) => {
-        setStatus(status)
-    }
+    const { type, setType } = useContext(ContextAPI)
     return (
         <Box>
             <StatusList>
                 {
                     statusList?.map((status, i) => (
-                        <span key={i} onClick={() => selectStatus(status.statusName)}>
-                            <NavLink activeClassName="activeStatus" to={`/${category}/${status.statusName}`}>{status.title}</NavLink>
+                        <span key={i} onClick={() => setType({...type, status: status.statusName})}>
+                            <NavLink to={`/${type.category}/${status.statusName}`}>{status.title}</NavLink>
                         </span>
                     ))
                 }

@@ -25,4 +25,14 @@ export const Product = styled.div`
             font-size: 18px;
         }
     }
+    .ptitle{
+        transition-duration: 300ms;
+        cursor: pointer;
+        :hover{
+            color: #46A358;
+        }
+    }
+    img{
+        cursor: pointer;
+    }
 `

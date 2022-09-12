@@ -8,6 +8,9 @@ export const Box = styled.div`
         outline: 0;
         cursor: pointer;
     }
+    span{
+        white-space: nowrap;
+    }
 `
 
 export const StatusList = styled.div`

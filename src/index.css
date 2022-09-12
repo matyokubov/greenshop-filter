@@ -35,6 +35,11 @@ body::-webkit-scrollbar-thumb {
     font-family: 'CeraPRO-Regular', 'Montserrat', sans-serif;
 }
 
+.main .active{
+    color: green !important;
+    font-weight: 700;
+}
+
 img{
     width: 100%;
 }
@@ -47,11 +52,6 @@ img{
 .sidebar{
     display: flex;
     flex-direction: column;
-}
-
-.activeCategoryItem, .activeStatus{
-    color: green !important;
-    font-weight: 700;
 }
 
 .activeStatus{
